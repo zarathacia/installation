@@ -1,0 +1,38 @@
+steps to install ORB-SLAM3 on an Ubuntu 18.04 machine:
+
+    Install dependencies:
+
+    sql
+
+sudo apt-get update
+sudo apt-get install build-essential libeigen3-dev libsuitesparse-dev libboost-all-dev libglew-dev libglfw3-dev libopencv-dev python3-dev python3-numpy
+
+Clone the ORB-SLAM3 repository:
+
+bash
+
+git clone https://github.com/JianboTong/ORB-SLAM3.git
+
+Build the ORB-SLAM3 library:
+
+bash
+
+cd ORB-SLAM3
+mkdir build
+cd build
+cmake ..
+make -j
+
+Install the library:
+
+go
+
+sudo make install
+
+Test the installation:
+
+bash
+
+    ./Examples/Monocular/mono_tum Vocabulary/ORBvoc.txt Examples/Monocular/TUM1.yaml
+
+Note that these steps assume that you have already installed the required dependencies, including the appropriate version of OpenCV, on your Ubuntu 18.04 machine. If you encounter any errors or issues during the installation process, consult the ORB-SLAM3 documentation or seek help from the ORB-SLAM3 community.
